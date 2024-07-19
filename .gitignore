@@ -1,0 +1,8 @@
+AWS_Credentials.py
+config.ini
+label_encoder.pkl
+minmax_scaler.pkl
+random_forest_model.pkl
+scp commands
+ec2_access_key.pem
+preprocessed_data.csv

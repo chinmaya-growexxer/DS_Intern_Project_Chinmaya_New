@@ -1,0 +1,74 @@
+Sure, there are a few other models you can try for natural language to SQL translation. Here are some options, each with different strengths and weaknesses:
+
+1. SQLNet:
+
+    Pros: Specifically designed for SQL generation from natural language. Relatively lightweight and easy to train.
+    Cons: May not perform as well on complex or ambiguous queries compared to larger models. Requires a specific dataset format.
+    Resources: https://github.com/xiaojunxu/SQLNet
+
+2. Seq2SQL:
+
+    Pros: Another model specifically for SQL generation. Has shown good results on various datasets.
+    Cons: May also require fine-tuning on your specific dataset for optimal performance. Can be computationally intensive.
+    Resources: https://github.com/salesforce/Seq2SQL
+
+3. BART (or other large language models):
+
+    Pros: Powerful language models with strong generalization capabilities. Can be fine-tuned for SQL generation.
+    Cons: Fine-tuning can be computationally expensive and require large amounts of data. May not be as specialized as SQLNet or Seq2SQL.
+    Resources: https://huggingface.co/facebook/bart-large
+
+4. TaBERT:
+
+    Pros: Designed to understand both natural language and tabular data, making it suitable for tasks involving databases.
+    Cons: May require more complex fine-tuning strategies compared to models specifically for SQL generation.
+    Resources: https://huggingface.co/microsoft/tabert-base-cased
+
+Choosing the Right Model:
+
+The best model for you will depend on factors like:
+
+    Complexity of your queries: If you have simple queries, SQLNet or Seq2SQL might be sufficient. For more complex queries, a larger model like BART or TaBERT might be needed.
+    Size and format of your dataset: Some models require specific dataset formats. Consider the effort required to prepare your data.
+    Computational resources: Fine-tuning large models requires significant GPU resources.
+
+General Steps (Regardless of Model):
+
+    Choose a model: Select a model based on the factors mentioned above.
+    Gather and preprocess data: Prepare a dataset of paired natural language questions and SQL queries.
+    Fine-tune the model: Train the chosen model on your dataset to optimize its performance for your specific task.
+
+
+### 
+### Flow of Natural Language to SQL (NL2SQL) and Natural Language (NL) Response
+
+1. **User Input**
+   - User enters a question in natural language (NL).
+
+2. **Submit Query**
+   - User clicks the "Submit" button.
+
+3. **NL to SQL Conversion**
+   - Capture user's NL question.
+   - Generate SQL query from the NL question using the `generate_sql_chain` function.
+
+4. **SQL Execution**
+   - Execute the generated SQL query using the `execute_query` function.
+   - Retrieve query results from the database.
+
+5. **Result Processing**
+   - Convert the SQL query results into a natural language response using the `generate_sql_to_nl` function.
+
+6. **Display Response**
+   - Display the NL response on the UI.
+   - Optional: Show SQL query and results if the user selects this option.
+
+7. **Show SQL Query and Results (Optional)**
+   - Display the generated SQL query and results if the user selects the "Show SQL Query and Results" checkbox.
+
+8. **Query History**
+   - Save the user's question, generated SQL query, and NL response.
+   - Display query history in the side menu.
+
+9. **Repeat Process**
+   - Allow the user to enter new questions and repeat the process.

@@ -1,0 +1,21 @@
+IMPROVEMENTS
+
+## SNS 
+-- need to include error details in email generated on failure of resources
+
+
+
+## LLM
+-- need to provide state_code and state full name reference to LLM for below like questions:
+
+	eg. what is the estimated cost for a customer living in Washington DC and has purshased the policy ?try 
+	approach : add in template / can use RAG as a lookup for state codes
+	
+-- chat history in context
+-- visualization of data where required 
+	eg. what is the weekly trend for the cost of purchased car policies?
+	eg. what are top k cost/car value/other columns?
+	eg. top 10 policy holders?
+
+-- datatype related questions
+	eg. what is the type/datatype of column ?	 
